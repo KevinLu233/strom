@@ -45,12 +45,12 @@ public class MyKafkaStormTopo {
 		
 			if (args!=null && args[0].equals("local")) {
 				LocalCluster cluster=new LocalCluster();
-				System.out.println("Start to submit Topology MyKafkaStormES_local_PS............");
-				cluster.submitTopology("MyKafkaStormES_local_PS_local", conf,builder.createTopology());
+				System.out.println("Start to submit Topology MyKafkaStormES_local_AAA............");
+				cluster.submitTopology("MyKafkaStormES_local_AAA_local", conf,builder.createTopology());
 				
 			}else if (args!=null && args[0].equals("cluster")) {
-				System.out.println("Start to submit Topology MyKafkaStormES_PS............");
-				StormSubmitter.submitTopology("MyKafkaStormES_PS", conf,builder.createTopology());
+				System.out.println("Start to submit Topology MyKafkaStormES_AAA............");
+				StormSubmitter.submitTopology("MyKafkaStormES_AAA", conf,builder.createTopology());
 			}else {
 				System.out.println("请输入需要提交 Topology 的模式：local or cluster");
 				System.exit(0);

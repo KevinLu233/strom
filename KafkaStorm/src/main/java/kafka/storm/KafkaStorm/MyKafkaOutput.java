@@ -43,18 +43,21 @@ public class MyKafkaOutput extends BaseRichBolt {
         //System.out.println("***************************************************************");
         //首先判断读入的信息是否是由syslog-ng传入kafka的正常的日志
         if (word.length() > 40 && "<13>".equals(word.substring(0,4))) {
-        // String[] result=word.split("@aaa");	
-        String[] result=word.split("@ps");
+        String[] result=word.split("@aaa");	
+        //String[] result=word.split("@ps");
         //取得ip和索引名字
         String[] result1=result[0].split(" ");
         //判断字符串里面是否有+
         //if (result1[4].length() > 9 && (result1[4].substring(result1[4].length()-9,result1[4].length()-8)).equals("+")) {
 		if((result1.length >= 4) &&
+			result1[(result1.length-1)].length() >= 9 &&
 		   (result1[(result1.length-1)].substring(result1[(result1.length-1)].length()-9, result1[(result1.length-1)].length()-8)).equals("+")
 		   ) {	
-	
-        String[] result2=result1[4].split("\\+");
-        String ip=result2[0];
+		
+			
+			String[] result2=result1[(result1.length-1)].split("\\+");	
+			//String[] result2=result1[4].split("\\+");
+			String ip=result2[0];
         
         
        

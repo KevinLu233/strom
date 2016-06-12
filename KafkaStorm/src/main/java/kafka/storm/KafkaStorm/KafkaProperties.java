@@ -9,7 +9,7 @@ public class KafkaProperties {
 	final static String zkConnect = "10.50.131.80:31315,10.50.131.85:31315,10.50.131.88:31315";
     final static String groupId = "kafka-storm";
     //final static String topic = "b2b_aaa";
-    final static String topic = "storm-ps";
+    final static String topic = "storm";
     final static String kafkaServerURL = "10.50.131.80,10.50.131.85,10.50.131.88";
     final static int kafkaServerPort = 9092;
     final static int kafkaProducerBufferSize = 64 * 1024;
